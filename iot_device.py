@@ -3,7 +3,7 @@ import random
 import threading
 import paho.mqtt.client as mqtt
 
-# ================= KONFIGURASI =================
+
 NIM = "2410010012"
 MQTT_BROKER = "localhost"
 MQTT_PORT = 1883
@@ -14,9 +14,9 @@ TOPIC_RELAY = f"iot/{NIM}/aktuator/relay"
 TOPIC_PWM = f"iot/{NIM}/aktuator/pwm"
 TOPIC_STATUS_RELAY = f"iot/{NIM}/status/relay"
 
-INTERVAL_PUBLISH = 3  # Sesuai modul: kirim data suhu setiap 3 detik
+INTERVAL_PUBLISH = 3  
 
-# ================= STATE GLOBAL =================
+
 relay_state = "OFF"
 pwm_value = 0
 
@@ -65,7 +65,7 @@ def on_message(client, userdata, msg):
 def on_disconnect(client, userdata, rc):
     print(f"[MQTT] Terputus (kode: {rc}). Mencoba reconnect...")
 
-# ================= PEMBACAAN SENSOR =================
+
 def baca_suhu():
     base = 27.0
     noise = random.uniform(-2.0, 3.0)
