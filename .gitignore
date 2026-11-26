@@ -1,0 +1,14 @@
+# Dependency & virtual environment (ukuran besar, jangan di-upload)
+node_modules/
+venv/
+__pycache__/
+*.py[cod]
+
+# File konfigurasi runtime & kredensial otomatis dari Node-RED (-u .)
+.config.*.json
+.config.*.json.backup
+*.backup
+flows_cred.json
+flows.json
+settings.js
+lib/
